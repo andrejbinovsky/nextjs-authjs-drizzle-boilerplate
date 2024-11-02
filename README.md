@@ -43,6 +43,7 @@ pnpm db:migrate
 
 ## Initial setup
 ```bash
+# Create a .env file from the .env_template file
 pnpm install
 pnpm db:dev
 pnpm db:migrate
