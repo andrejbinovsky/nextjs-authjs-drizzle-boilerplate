@@ -66,14 +66,12 @@ export const { handlers, auth } = NextAuth({
       }
       return token
     },
-    session(params) {
-      return {
-        ...params.session,
-        user: {
-          ...params.session.user,
-          id: params.token.id as string
-        }
+    session: (params) => ({
+      ...params.session,
+      user: {
+        ...params.session.user,
+        id: params.token.id as string
       }
-    }
+    })
   }
 })
