@@ -37,8 +37,6 @@ export const { handlers, auth } = NextAuth({
         password: { label: 'Password', type: 'password' }
       },
       authorize: async (credentials) => {
-        // wait 4 seconds
-        await new Promise((resolve) => setTimeout(resolve, 1000))
         if (!credentials?.email || !credentials.password) {
           throw new InvalidLoginError('Credentials not found.')
         }
